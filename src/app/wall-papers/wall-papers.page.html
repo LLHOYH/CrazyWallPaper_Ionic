@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-searchbar placeholder="Try Search Here..." color="dark" [(ngModel)]="searchQuery" id="searchbar" (search)="SearchWithQuery($event)"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+
+<!-- <ion-card id="wallPaperCard">
+  <ion-item class="wallPaperItems ion-no-padding" lines="none" id="wallPaperItem" *ngFor="let wallPaper of wallPapers">
+    <ion-img [src]="wallPaper.urls.regular"
+    (click)="OpenPhotoViewer(wallPaper.urls.regular)"
+    class="wallPapers">
+  </ion-img>
+  <ion-button style="height:50%;width:20%;" class="item2" color="secondary" expand="block" icon-only clear>
+    <ion-icon name="arrow-down-circle-outline"></ion-icon>
+  </ion-button> 
+</ion-item>
+</ion-card> -->
+
+<ion-card class="wallPaperCards" *ngFor="let wallPaper of wallPapers" > 
+  <ion-item class="ion-no-padding" id="wallPaperItem" lines="none">
+    <ion-img [src]="wallPaper.urls.regular"
+    (click)="OpenPhotoViewer(wallPaper.urls.regular)"
+    class="wallPapers">
+  </ion-img>
+  </ion-item>
+    <ion-button style="height:20px;width:13%;" class="downloadBtns" color="transparent" expand="block" 
+    icon-only clear (click)="SaveImageToGallery(wallPaper.urls.regular)">
+      <ion-icon name="arrow-down-circle-outline"></ion-icon>
+    </ion-button> 
+</ion-card>
+
+<ion-infinite-scroll threshold="100px" (ionInfinite)="LoadAddOnWallPapers($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Presenting More Wall Papers..."
+    style="color:white;">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

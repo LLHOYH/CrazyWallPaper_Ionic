@@ -1,0 +1,56 @@
+.wallPapers{
+    margin-top: 5px;
+    border-radius: 3% !important;
+    overflow: hidden;
+}
+
+.wallPaperItems{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "overlap";
+}
+
+
+#wallPaperItem{
+    padding-left: 10px;
+    border:none;
+}
+
+.wallPaperCards{
+    padding:-40px 0;
+    border: white;
+    box-shadow: 0 0 2px 2px white ;
+    margin:5px 10px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "overlap";
+}
+
+.downloadBtns{
+    justify-self: end;
+    margin-right: 0;
+    margin-top: -20px;
+    z-index: 2;
+}
+
+ion-card-content{
+    margin:0;
+}
+
+ion-content{
+    --ion-background-color:#031729;
+  }
+
+
+  #customAlert{
+    background-color: red !important;
+  }
+  
+  //obsolete
+
+// #wallPaperCard{
+//     box-shadow: 0 10px 10px 0 white ;
+// }
