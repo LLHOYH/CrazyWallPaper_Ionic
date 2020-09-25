@@ -8,12 +8,16 @@ import { WallPapersPageRoutingModule } from './wall-papers-routing.module';
 
 import { WallPapersPage } from './wall-papers.page';
 
+import { IonicImageLoader } from 'ionic-image-loader';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WallPapersPageRoutingModule
+    WallPapersPageRoutingModule,
+    IonicImageLoader
   ],
   declarations: [WallPapersPage]
 })

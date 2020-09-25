@@ -14,7 +14,9 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { PinchZoomModule } from 'ngx-pinch-zoom';
 import { Base64 } from '@ionic-native/base64/ngx';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
-import { module} from 'image-to-base64';
+
+import { IonicImageLoader } from 'ionic-image-loader';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,15 +26,17 @@ import { module} from 'image-to-base64';
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
-    PinchZoomModule
+    PinchZoomModule,
+    IonicImageLoader.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     PhotoViewer,
     Base64,
     Base64ToGallery,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    WebView,
   ],
   bootstrap: [AppComponent]
 })
